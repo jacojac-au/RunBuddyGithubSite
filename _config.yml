@@ -35,7 +35,7 @@ features:
     description: "Log your runs in the way you need—times, locations, and anything else relevant to you."
     fontawesome_icon_name: "route"
 
- - title: Metro Tunnel Support
+  - title: Metro Tunnel Support
     description: "Fully compatible with Metro Tunnel operations..."
     fontawesome_icon_name: "train-subway"
     image: "assets/metro_tunnel_icon.png"
