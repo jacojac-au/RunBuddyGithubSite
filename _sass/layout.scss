@@ -691,9 +691,9 @@ footer {
 	height: 50px;
 	object-fit: contain; 
 	// or object-fit: cover;  if you want to fill the area
-  }
+}
 
-  .feature .feature-icon {
+.feature .feature-icon {
 	/* If you want Font Awesome icons to appear in a circle with a consistent size: */
 	width: 36px;
 	height: 36px;
@@ -708,21 +708,73 @@ footer {
   
 	/* Font Awesome icons scale with font-size, so adjust as needed: */
 	font-size: 20px;
-  }
+}
   
-  /* Ensures images used in place of icons match the same size and shape */
-  .feature .feature-icon img {
+/* Ensures images used in place of icons match the same size and shape */
+.feature .feature-icon img {
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
 	object-fit: cover;
 	display: block;
-  }
+}
 
-  .iconImage {
+.iconImage {
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
 	object-fit: cover;    /* Keeps image proportionate */
 	display: block;
-  }
+}
+
+/* Updated Icon Styling for Font Awesome and Image Icons */
+.feature .iconContainer {
+	position: relative;
+	width: 36px;
+	height: 36px;
+}
+
+.feature .iconContainer .iconStack {
+	position: relative;
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+}
+
+.feature .iconContainer .iconImage {
+	width: 36px;
+	height: 36px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+/* Ensures both Font Awesome and image icons are centered and sized consistently */
+.feature .iconContainer .iconBack,
+.feature .iconContainer .iconTop,
+.feature .iconContainer .iconImage {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.feature .iconContainer .iconBack {
+	color: #e6e6e6; /* Background color for icon circle */
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+}
+
+.feature .iconContainer .iconTop {
+	z-index: 2;
+	color: #1d63ea; /* Foreground icon color */
+	font-size: 20px;
+}
