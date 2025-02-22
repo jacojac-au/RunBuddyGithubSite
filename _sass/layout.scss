@@ -484,6 +484,7 @@ nav > ul li a:active {
 
 .feature {
 	display: flex;
+	align-items: flex-start;
 	padding-top: 63px;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -494,12 +495,60 @@ nav > ul li a:active {
     padding-top: 0px;   
 }
 
-.feature:nth-child(3n) {
-	padding-right: 0px;
+.feature .iconContainer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 36px;
+	height: 36px;
+	margin-right: 18px;
+	flex-shrink: 0;
 }
 
-.feature:nth-child(3n+1) {
-	padding-left: 0px;
+.feature .iconContainer .iconStack {
+	position: relative;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.feature .iconContainer .iconBack {
+	display: none;
+}
+
+.feature .iconContainer .iconTop {
+	position: relative;
+	z-index: 1;
+	color: #1d63ea;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.feature .iconContainer .iconImage {
+	position: relative;
+	width: 36px;
+	height: 36px;
+	object-fit: contain;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.feature .featureText {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-grow: 1;
+}
+
+.feature .featureText > h3 {
+	margin-top: 0;
+	line-height: 36px; /* Matches icon height */
 }
 
 .iconBack {
@@ -519,7 +568,7 @@ nav > ul li a:active {
 }
 
 .featureText {
-	margin-left: 18px;
+	flex-grow: 1;
 }
 
 .featureText > h3 {
@@ -533,7 +582,6 @@ nav > ul li a:active {
 }
 
 @media only screen and (max-width: 992px) {
-
 	.features {
 		flex-grow: 1;
 		flex-direction: row;
@@ -564,11 +612,9 @@ nav > ul li a:active {
 	.feature:nth-child(3n+1) {
 		padding-left: 15px;
 	}
-	
 }
 
 @media only screen and (max-width: 375px) {
-
 	.features {
 		flex-grow: 1;
 		flex-direction: row;
@@ -599,7 +645,6 @@ nav > ul li a:active {
 	.feature:nth-child(3n+1) {
 		padding-left: 0px;
 	}
-	
 } 
 
 
@@ -690,27 +735,28 @@ footer {
 	width: 50px;
 	height: 50px;
 	object-fit: contain; 
-	// or object-fit: cover;  if you want to fill the area
+}
+
+.iconImage {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	object-fit: cover;    
+	display: block;
 }
 
 .feature .feature-icon {
-	/* If you want Font Awesome icons to appear in a circle with a consistent size: */
 	width: 36px;
 	height: 36px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-  
-	/* You can adjust the background if needed */
 	background-color: #e6e6e6;
 	color: #1d63ea;
-  
-	/* Font Awesome icons scale with font-size, so adjust as needed: */
 	font-size: 20px;
 }
   
-/* Ensures images used in place of icons match the same size and shape */
 .feature .feature-icon img {
 	width: 36px;
 	height: 36px;
@@ -719,52 +765,34 @@ footer {
 	display: block;
 }
 
-.iconImage {
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	object-fit: cover;    /* Keeps image proportionate */
-	display: block;
+/* Utility Classes for Responsive Design */
+@media only screen and (max-width: 768px) {
+	.mobile-center {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
-.feature .iconContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 36px;
-    height: 36px;
+/* Additional Responsive Adjustments */
+@media only screen and (max-width: 992px) {
+	.responsive-flex-center {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
-.feature .iconContainer .iconStack {
-    position: relative;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* Print Styles */
+@media print {
+	.hidden-print {
+		display: none !important;
+	}
 
-.feature .iconContainer .iconBack {
-    display: none;
-}
-
-.feature .iconContainer .iconTop {
-    position: relative;
-    z-index: 1;
-    color: #1d63ea;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.feature .iconContainer .iconImage {
-    position: relative;
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	.container {
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+	}
 }
