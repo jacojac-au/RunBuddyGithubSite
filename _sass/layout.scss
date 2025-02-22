@@ -729,52 +729,51 @@ footer {
 
 /* Updated Icon Styling for Font Awesome and Image Icons */
 .feature .iconContainer {
-	position: relative;
-	width: 36px;
-	height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
 }
 
 .feature .iconContainer .iconStack {
-	position: relative;
-	display: inline-block;
-	width: 36px;
-	height: 36px;
-}
-
-.feature .iconContainer .iconImage {
-	width: 36px;
-	height: 36px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	object-fit: cover;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 1;
-}
-
-/* Ensures both Font Awesome and image icons are centered and sized consistently */
-.feature .iconContainer .iconBack,
-.feature .iconContainer .iconTop,
-.feature .iconContainer .iconImage {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature .iconContainer .iconBack {
-	color: #e6e6e6; /* Background color for icon circle */
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature .iconContainer .iconTop {
-	z-index: 2;
-	color: #1d63ea; /* Foreground icon color */
-	font-size: 20px;
+    position: relative;
+    z-index: 1;
+    color: #1d63ea;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature .iconContainer .iconImage {
+    position: absolute;
+    width: 30px;  /* Slightly smaller than the background circle */
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
