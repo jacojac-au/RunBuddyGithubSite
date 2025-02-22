@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Terms of Service
-include_in_header: True
+include_in_header: true
 ---
 
 **Last updated**  
