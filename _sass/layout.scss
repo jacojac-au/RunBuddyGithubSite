@@ -706,80 +706,175 @@ nav > ul li a:active {
 // Footer
 
 footer {
-	grid-area: f;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+    grid-area: f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 20px;
+    background-color: #f9f9f9;
 }
 
 .footerText {
-	color: $footer-text-color;
-	display: block;
-	line-height: 1.5;
-	width: 100%;
-	text-align: center;
-	padding-top: 70px;
-	padding-bottom: 70px;
+    color: $footer-text-color;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+
+    a {
+        color: $footer-text-color;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: darken($footer-text-color, 20%);
+        }
+    }
 }
 
 .footerIcons {
-	padding-bottom: 70px;
-	display: flex;
-	flex: 0 0 100%;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.footerIcons a {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    .socialIconBack {
+        position: absolute;
+        color: $social-icons-background-color;
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .socialIconTop {
+        position: relative;
+        z-index: 1;
+        color: $social-icons-foreground-color;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .footerLinks {
-	display: flex;
-	text-align: center;
-	padding-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 15px;
 }
 
 .footerLinks a {
-	margin-right: 30px;
+    color: $footer-text-color;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: $footer-text-color;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        color: darken($footer-text-color, 20%);
+
+        &::after {
+            transform: scaleX(1);
+        }
+    }
 }
 
-.footerLinks a:last-child {
-	margin-right: 0px;
-}
-
-
+// Responsive Adjustments
 @media only screen and (max-width: 768px) {
+    footer {
+        padding: 40px 15px;
+    }
 
-	.footerLinks {
-		flex-direction: column;
-	}
+    .footerText {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
 
-	.footerLinks a {
-		justify-content: stretch;
-		margin-right: 0px;
-		margin-top: 20px;
-	}
+    .footerIcons {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
 
-	.footerLinks a:first-child {
-		margin-top: 0px;
-	}	
+    .footerIcons a {
+        width: 40px;
+        height: 40px;
 
+        .socialIconBack {
+            font-size: 40px;
+        }
+
+        .socialIconTop {
+            font-size: 20px;
+        }
+    }
+
+    .footerLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footerLinks a {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
 }
 
-@media only screen and (max-width: 992px) {
-	
-	.footerText {
-		color: $footer-text-color;
-		display: block;
-		line-height: 1.5;
-		width: 100%;
-		text-align: center;
-		padding-top: 54px;
-		padding-bottom: 61px;
-	}
-	
-	.footerIcons {
-		padding-bottom: 70px;
-		display: flex;
-	}
-	
-} 
+@media only screen and (max-width: 375px) {
+    .footerIcons {
+        gap: 10px;
+    }
+
+    .footerIcons a {
+        width: 35px;
+        height: 35px;
+
+        .socialIconBack {
+            font-size: 35px;
+        }
+
+        .socialIconTop {
+            font-size: 18px;
+        }
+    }
+}
 
 .hidden {
 	display: none;
