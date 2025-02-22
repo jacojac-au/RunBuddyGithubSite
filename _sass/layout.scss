@@ -727,7 +727,6 @@ footer {
 	display: block;
 }
 
-/* Updated Icon Styling for Font Awesome and Image Icons */
 .feature .iconContainer {
     display: flex;
     justify-content: center;
@@ -746,14 +745,7 @@ footer {
 }
 
 .feature .iconContainer .iconBack {
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #e6e6e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
 }
 
 .feature .iconContainer .iconTop {
@@ -767,11 +759,10 @@ footer {
 }
 
 .feature .iconContainer .iconImage {
-    position: absolute;
-    width: 30px;  /* Slightly smaller than the background circle */
-    height: 30px;
-    border-radius: 50%;
-    object-fit: cover;
+    position: relative;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
     z-index: 1;
     display: flex;
     justify-content: center;
