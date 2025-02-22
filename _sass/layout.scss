@@ -692,3 +692,29 @@ footer {
 	object-fit: contain; 
 	// or object-fit: cover;  if you want to fill the area
   }
+
+  .feature .feature-icon {
+	/* If you want Font Awesome icons to appear in a circle with a consistent size: */
+	width: 36px;
+	height: 36px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+  
+	/* You can adjust the background if needed */
+	background-color: #e6e6e6;
+	color: #1d63ea;
+  
+	/* Font Awesome icons scale with font-size, so adjust as needed: */
+	font-size: 20px;
+  }
+  
+  /* Ensures images used in place of icons match the same size and shape */
+  .feature .feature-icon img {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	object-fit: cover;
+	display: block;
+  }

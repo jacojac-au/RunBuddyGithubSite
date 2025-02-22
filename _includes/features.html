@@ -2,24 +2,33 @@
     {% for feature in site.features %}
       {% if feature.title %}
         <div class="feature">
-          <div>
+          
+          <!-- Icon Container -->
+          <div class="iconContainer">
             {% if feature.image %}
-              <img 
-                class="customIcon" 
-                src="{{ feature.image | relative_url }}" 
-                alt="{{ feature.title }}" 
-              />
+              <!-- Image Icon -->
+              <span class="fa-stack fa-1x iconStack">
+                <img 
+                  class="iconImage" 
+                  src="{{ feature.image | relative_url }}" 
+                  alt="{{ feature.title }}" 
+                />
+              </span>
             {% else %}
-              <span class="fa-stack fa-1x">
+              <!-- Font Awesome Icon -->
+              <span class="fa-stack fa-1x iconStack">
                 <i class="iconBack fas fa-circle fa-stack-2x"></i>
                 <i class="iconTop fas fa-{{ feature.fontawesome_icon_name }} fa-stack-1x"></i>
               </span>
             {% endif %}
           </div>
+          
+          <!-- Text Container -->
           <div class="featureText">
             <h3>{{ feature.title }}</h3>
             <p>{{ feature.description }}</p>
           </div>
+          
         </div>
       {% endif %}
     {% endfor %}
