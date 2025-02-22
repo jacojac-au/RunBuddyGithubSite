@@ -685,3 +685,10 @@ footer {
 .hidden {
 	display: none;
 }
+
+.customIcon {
+	width: 50px;
+	height: 50px;
+	object-fit: contain; 
+	// or object-fit: cover;  if you want to fill the area
+  }
